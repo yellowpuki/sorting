@@ -17,7 +17,19 @@ func findMin(array []int) int {
 	return minIdx
 }
 
+func findMax(array []int) int {
+	max, maxIdx := 0, 0
+
+	for i := range array {
+		if array[i] > max {
+			max, maxIdx = array[i], i
+		}
+	}
+	return maxIdx
+}
+
 func main() {
 	var a = []int{3, 1, 5, 7, 8, 2, 6}
-	fmt.Println("Min el nimber ", findMin(a), " value = ", a[findMin(a)])
+	fmt.Println("Min el index ", findMin(a), " value = ", a[findMin(a)])
+	fmt.Println("Max el index ", findMax(a), " value = ", a[findMax(a)])
 }
